@@ -59,7 +59,21 @@ p { color: var(--text-dim); }
 }
 
 .card h3 { margin: 0 0 6px; font-size: 16px; color: var(--text); }
-.card p { margin: 0; font-size: 14px; }
+.card p { margin: 0 0 12px; font-size: 14px; }
+.card ul { margin: 0; }
+
+.buy-btn {
+  display: inline-block;
+  background: var(--accent);
+  color: #06231f;
+  font-weight: 700;
+  font-size: 13.5px;
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+}
+
+.buy-btn:hover { opacity: 0.85; }
 
 .contact {
   margin-top: 40px;
