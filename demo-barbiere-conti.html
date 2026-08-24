@@ -6,7 +6,7 @@
 <title>Barbiere Conti -- Sito dimostrativo AICOS</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
 <style>
   :root {
     --bg: #1c1613; --panel: #241d19; --border: #3a2f28; --text: #f3ece3;
@@ -36,12 +36,30 @@
   .logo-mark.large { width: 56px; height: 56px; font-size: 21px; }
   header .wordmark { font-family: 'Fraunces', Georgia, serif; font-weight: 600; font-size: 20px; }
   header nav a { color: var(--text-dim); text-decoration: none; margin-left: 22px; font-size: 14px; }
-  section.hero {
-    max-width: 760px; margin: 0 auto; padding: 64px 24px 48px; text-align: center;
-    border-bottom: 1px solid var(--border);
+  .eyebrow {
+    font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11px; letter-spacing: .12em;
+    text-transform: uppercase; color: var(--accent); font-weight: 500;
   }
-  section.hero h1 { font-size: 46px; font-weight: 700; margin: 0 0 16px; }
-  section.hero .tagline { font-size: 18px; color: var(--text-dim); max-width: 480px; margin: 0 auto 30px; }
+  section.hero {
+    max-width: 900px; margin: 0 auto; padding: 64px 24px 56px; border-bottom: 1px solid var(--border);
+  }
+  .hero-grid { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 48px; align-items: center; }
+  .hero-grid h1 { font-size: clamp(2.1rem, 4.5vw, 3rem); text-align: left; margin: 12px 0 14px; line-height: 1.1; }
+  .hero-grid .tagline { font-size: 17px; color: var(--text-dim); text-align: left; margin: 0 0 28px; max-width: 46ch; }
+  @media (max-width: 680px) { .hero-grid { grid-template-columns: 1fr; } }
+  .info-card {
+    background: var(--panel); border: 1px solid var(--border); border-radius: 14px;
+    padding: 24px; position: relative; overflow: hidden;
+  }
+  .info-card::before { content: ""; position: absolute; inset: 0 0 auto 0; height: 5px; background: var(--accent); }
+  .info-card .ic-label {
+    font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; letter-spacing: .08em;
+    text-transform: uppercase; color: var(--text-dim); margin-top: 14px;
+  }
+  .info-card .ic-name { font-family: 'Fraunces', Georgia, serif; font-size: 20px; font-weight: 600; margin-top: 6px; }
+  .info-card .ic-status { display: flex; align-items: center; gap: 8px; margin-top: 14px; font-size: 13px; color: var(--text-dim); }
+  .info-card hr { border: none; border-top: 1px solid var(--border); margin: 18px 0; }
+  .info-card .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); flex-shrink: 0; }
   .cta-button {
     display: inline-block; background: var(--accent); color: var(--accent-ink); font-weight: 600;
     text-decoration: none; padding: 14px 32px; border-radius: 999px; font-size: 15px;
@@ -50,7 +68,7 @@
   .cta-button:hover { background: var(--accent-soft); }
   main { max-width: 760px; margin: 0 auto; padding: 56px 24px; }
   main section { margin-bottom: 56px; }
-  main h2 { font-size: 26px; margin: 0 0 18px; }
+  main h2 { font-size: 26px; margin: 10px 0 18px; }
   .section-intro { color: var(--text-dim); font-size: 15px; margin: -8px 0 26px; }
   .about p { color: var(--text-dim); font-size: 16px; max-width: 560px; }
   .services { list-style: none; padding: 0; margin: 0; border-top: 1px solid var(--border); }
@@ -124,33 +142,49 @@
 </header>
 
 <section class="hero">
-  <h1>Barbiere Conti</h1>
-  <p class="tagline">Barbiere Conti: taglio alla moda a prezzi accessibili</p>
-  <a class="cta-button" href="https://bipolarwastaken.github.io/aicos-site/ai-starter-website-brand-kit.html">Vuoi un sito cosi' per la tua attivita'?</a>
+  <div class="hero-grid">
+    <div>
+      <p class="eyebrow">barbiere &middot; realizzato con AICOS</p>
+      <h1>Barbiere Conti</h1>
+      <p class="tagline">Barbiere Conti: tagli e stili personalizzati</p>
+      <a class="cta-button" href="https://bipolarwastaken.github.io/aicos-site/ai-starter-website-brand-kit.html">Vuoi un sito cosi' per la tua attivita'?</a>
+    </div>
+    <div class="info-card">
+      <p class="ic-label">Attivita'</p>
+      <p class="ic-name">Barbiere Conti</p>
+      <div class="ic-status"><span class="dot"></span> barbiere</div>
+      <hr>
+      <p class="ic-label">Realizzato con</p>
+      <p class="ic-name" style="color:var(--accent);">AICOS -- AI Starter Website</p>
+      <div class="ic-status"><span class="dot"></span> Online in 48 ore</div>
+    </div>
+  </div>
 </section>
 
 <main>
   <section class="about">
     <h2>Chi siamo</h2>
-    <p>Benvenuti da Barbiere Conti, dove il nostro obiettivo è fare di ogni visita un'esperienza piacevole e professionale. Offriamo tagli di alta qualità e servizio clienti di primo livello.</p>
+    <p>Benvenuti nel nostro barbiere familiare. Offriamo tagli da esperti a prezzi accessibili. Siamo qui per soddisfare le tue esigenze di stile e comodità.</p>
   </section>
 
   <section id="servizi">
-    <h2>Servizi</h2>
+    <p class="eyebrow">Servizi</p>
+    <h2>Cosa offriamo</h2>
     <ul class="services">
-      <li><span>Taglio standard</span><span class="price">EUR 20</span></li>
-      <li><span>Taglio specializzato</span><span class="price">EUR 30</span></li>
-      <li><span>Barba e baffi</span><span class="price">EUR 15</span></li>
-      <li><span>Styling</span><span class="price">EUR 10</span></li>
+      <li><span>Taglio corto</span><span class="price">EUR 15</span></li>
+      <li><span>Taglio medio</span><span class="price">EUR 20</span></li>
+      <li><span>Taglio lungo</span><span class="price">EUR 25</span></li>
+      <li><span>Trattamento speciale</span><span class="price">EUR 40</span></li>
     </ul>
     <div class="hours-box" style="margin-top:18px;">
       <div class="label">Orari</div>
-      <div>Lun-Ven 9:00-18:00, Sab 9:00-15:00</div>
+      <div>Lun-Sab 9:00-19:00</div>
     </div>
   </section>
 
   <section id="brand-kit">
-    <h2>Il brand kit</h2>
+    <p class="eyebrow">Brand kit</p>
+    <h2>Logo, palette e social</h2>
     <p class="section-intro">Logo, palette e template social pronti da usare su ogni canale -- inclusi nell'offerta.</p>
     <div class="brandkit-grid">
       <div class="brandkit-block">
@@ -179,10 +213,10 @@
     <div class="social-grid">
       <div class="social-card fill">
         <div class="social-mark">BC</div>
-        <div class="social-text">Taglio di capelli professionale</div>
+        <div class="social-text">Professionali tagli barba</div>
       </div>
       <div class="social-card outline">
-        <div class="social-text">Servizio clienti eccellente</div>
+        <div class="social-text">Stili per ogni occasione</div>
         <div class="social-mark">BC</div>
       </div>
       <div class="social-card fill">
