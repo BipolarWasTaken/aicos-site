@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Barbiere Conti -- Sito dimostrativo AICOS</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #1c1613; --panel: #241d19; --border: #3a2f28;
+    --text: #f3ece3; --text-dim: #c9bcae; --accent: #c9822e; --accent-soft: #e0a75c;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--text);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; line-height: 1.6;
+  }
+  h1, h2 { font-family: 'Fraunces', Georgia, serif; }
+  .demo-banner {
+    background: var(--panel); border-bottom: 1px solid var(--border);
+    text-align: center; padding: 10px 16px; font-size: 13px; color: var(--text-dim);
+  }
+  .demo-banner a { color: var(--accent-soft); }
+  header {
+    max-width: 760px; margin: 0 auto; padding: 28px 24px 0;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  header .brand { font-family: 'Fraunces', serif; font-weight: 600; font-size: 20px; }
+  header nav a { color: var(--text-dim); text-decoration: none; margin-left: 22px; font-size: 14px; }
+  section.hero {
+    max-width: 760px; margin: 0 auto; padding: 64px 24px 48px; text-align: center;
+    border-bottom: 1px solid var(--border);
+  }
+  section.hero h1 { font-size: 46px; font-weight: 700; margin: 0 0 16px; }
+  section.hero .tagline { font-size: 18px; color: var(--text-dim); max-width: 480px; margin: 0 auto 30px; }
+  .cta-button {
+    display: inline-block; background: var(--accent); color: #241305; font-weight: 600;
+    text-decoration: none; padding: 14px 32px; border-radius: 999px; font-size: 15px;
+    transition: background .15s;
+  }
+  .cta-button:hover { background: var(--accent-soft); }
+  main { max-width: 760px; margin: 0 auto; padding: 56px 24px; }
+  main section { margin-bottom: 56px; }
+  main h2 { font-size: 26px; margin: 0 0 18px; }
+  .about p { color: var(--text-dim); font-size: 16px; max-width: 560px; }
+  .services { list-style: none; padding: 0; margin: 0; border-top: 1px solid var(--border); }
+  .services li {
+    display: flex; justify-content: space-between; padding: 14px 0;
+    border-bottom: 1px solid var(--border); font-size: 15.5px;
+  }
+  .services li .price { color: var(--accent-soft); font-weight: 600; }
+  .hours-box {
+    background: var(--panel); border: 1px solid var(--border); border-radius: 14px;
+    padding: 26px 28px; display: flex; justify-content: space-between; align-items: center;
+    flex-wrap: wrap; gap: 16px;
+  }
+  .hours-box .label {
+    font-size: 13px; text-transform: uppercase; letter-spacing: .06em; color: var(--text-dim);
+    margin-bottom: 4px;
+  }
+  footer {
+    max-width: 760px; margin: 0 auto; padding: 24px; color: var(--text-dim);
+    font-size: 12.5px; border-top: 1px solid var(--border); text-align: center;
+  }
+  footer a { color: var(--accent-soft); }
+</style>
+</head>
+<body>
+
+<div class="demo-banner">
+  Sito dimostrativo creato con AICOS -- non e' un'attivita' reale. <a href="portfolio.html">Vedi altri esempi</a>
+</div>
+
+<header>
+  <div class="brand">Barbiere Conti</div>
+  <nav><a href="#servizi">Servizi</a><a href="#contatti">Contatti</a></nav>
+</header>
+
+<section class="hero">
+  <h1>Barbiere Conti</h1>
+  <p class="tagline">Barbiere Conti: la tua chioma in mani esperte</p>
+  <a class="cta-button" href="#contatti">Prenota ora</a>
+</section>
+
+<main>
+  <section class="about">
+    <h2>Chi siamo</h2>
+    <p>Benvenuti a Barbiere Conti, dove il comfort e il professionismo si uniscono per offrire un servizio di taglio capelli di alto livello. Ci prendiamo cura del tuo look con cura e attenzione.</p>
+  </section>
+
+  <section id="servizi">
+    <h2>Servizi</h2>
+    <ul class="services">
+      <li><span>Taglio capelli maschile</span><span class="price">EUR 20</span></li>
+      <li><span>Taglio capelli femminile</span><span class="price">EUR 25</span></li>
+      <li><span>Barba e baffi</span><span class="price">EUR 15</span></li>
+      <li><span>Tintura</span><span class="price">EUR 60</span></li>
+      <li><span>Perm</span><span class="price">EUR 50</span></li>
+    </ul>
+  </section>
+
+  <section id="contatti">
+    <h2>Orari e contatti</h2>
+    <div class="hours-box">
+      <div>
+        <div class="label">Orari</div>
+        <div>Lun-Sab 9:00-19:00</div>
+      </div>
+      <a class="cta-button" href="#">Prenota ora</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  Esempio dimostrativo generato da AICOS per mostrare la qualita' reale del servizio "AI Starter Website + Brand Kit".
+  <br><a href="portfolio.html">&larr; Torna al portfolio</a>
+</footer>
+
+</body>
+</html>
