@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Il sito web che il tuo business merita Credibilità online, visibilità su Google</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+  :root {
+    --ink: #16241c; --ink-soft: #3d4a41; --paper: #eceee7; --surface: #ffffff;
+    --pine: #1f4d3a; --pine-soft: #dce6de; --gold: #b97a1f; --gold-soft: #f2e2c4;
+    --line: #c7cdc3; --shadow: 0 1px 0 rgba(22,36,28,0.06); --radius: 3px; font-size: 17px;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --ink: #e9ece6; --ink-soft: #b7bfb5; --paper: #121a15; --surface: #182119;
+      --pine: #8fc7a8; --pine-soft: #1f3527; --gold: #e0a94b; --gold-soft: #3a2c14; --line: #2c372e;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--paper); color: var(--ink);
+    font-family: "Public Sans", system-ui, sans-serif; line-height: 1.55; -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 780px; margin: 0 auto; padding: 0 28px; }
+  h1, h2, h3 { font-family: "Fraunces", Georgia, serif; font-weight: 600; text-wrap: balance; margin: 0; }
+  .eyebrow {
+    font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 0.72rem;
+    letter-spacing: 0.14em; text-transform: uppercase; color: var(--pine); font-weight: 500;
+  }
+  a { color: inherit; }
+  section { padding: 64px 0; border-bottom: 1px solid var(--line); }
+  section:last-of-type { border-bottom: none; }
+  header.top { padding: 22px 0; }
+  .top .wrap { display: flex; justify-content: space-between; align-items: center; }
+  .brand { font-family: "Fraunces", serif; font-weight: 600; font-size: 1.05rem; }
+  .hero { padding-top: 40px; padding-bottom: 56px; }
+  .hero h1 { font-size: clamp(2.1rem, 4.2vw, 3rem); line-height: 1.08; letter-spacing: -0.01em; }
+  .hero h1 .accent { color: var(--pine); }
+  .hero p.lede { margin-top: 20px; font-size: 1.08rem; color: var(--ink-soft); max-width: 46ch; }
+  .cta-row { margin-top: 30px; display: flex; gap: 14px; align-items: center; flex-wrap: wrap; }
+  .btn {
+    font-family: "Public Sans", sans-serif; font-weight: 600; font-size: 0.95rem; padding: 13px 22px;
+    border-radius: var(--radius); text-decoration: none; display: inline-block;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .btn-primary { background: var(--pine); color: var(--pine-soft); }
+  .btn-primary:hover { transform: translateY(-1px); box-shadow: 0 6px 16px rgba(31,77,58,0.28); }
+  .btn-ghost { color: var(--ink); border-bottom: 1px solid var(--ink-soft); padding: 13px 2px; }
+  @media (prefers-reduced-motion: reduce) { .btn { transition: none; } }
+  .stat { font-family: "Fraunces", serif; font-size: 3.2rem; color: var(--pine); line-height: 1; }
+  .problem-grid { display: grid; grid-template-columns: auto 1fr; gap: 28px; align-items: start; margin-top: 28px; }
+  .problem-grid p { margin: 0; color: var(--ink-soft); max-width: 52ch; }
+  .source { font-size: 0.78rem; color: var(--ink-soft); margin-top: 10px; }
+  .source a { border-bottom: 1px solid var(--line); text-decoration: none; }
+  ul.included { list-style: none; margin: 30px 0 0; padding: 0; display: grid; gap: 0; }
+  ul.included li { display: grid; grid-template-columns: 28px 1fr; gap: 14px; padding: 16px 0; border-top: 1px solid var(--line); }
+  ul.included li:last-child { border-bottom: 1px solid var(--line); }
+  ul.included .mark { font-family: "IBM Plex Mono", monospace; color: var(--pine); font-size: 0.95rem; }
+  ul.included strong { font-weight: 600; }
+  ul.included span.desc { display: block; color: var(--ink-soft); font-size: 0.94rem; margin-top: 2px; }
+  .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 32px; }
+  .step { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 22px; }
+  .step .num { font-family: "IBM Plex Mono", monospace; color: var(--gold); font-size: 0.8rem; letter-spacing: 0.08em; }
+  .step h3 { font-size: 1.05rem; margin-top: 10px; }
+  .step p { margin: 8px 0 0; color: var(--ink-soft); font-size: 0.92rem; }
+  @media (max-width: 640px) { .steps, .problem-grid { grid-template-columns: 1fr; } }
+  .receipt {
+    background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+    padding: 30px 32px; max-width: 460px; margin-top: 30px; font-family: "IBM Plex Mono", monospace; font-size: 0.92rem;
+  }
+  .receipt .row { display: flex; justify-content: space-between; padding: 9px 0; }
+  .receipt .row.total {
+    border-top: 1px dashed var(--line); margin-top: 6px; padding-top: 16px;
+    font-size: 1.4rem; font-family: "Fraunces", serif; font-weight: 600;
+  }
+  .receipt .row.total .amt { color: var(--pine); }
+  .receipt .fine { font-family: "Public Sans", sans-serif; color: var(--ink-soft); font-size: 0.84rem; margin-top: 16px; }
+  .faq { margin-top: 28px; display: grid; gap: 22px; }
+  .faq dt { font-weight: 600; font-size: 1.02rem; }
+  .faq dd { margin: 6px 0 0; color: var(--ink-soft); }
+  footer { padding: 40px 0 60px; }
+  footer .wrap { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 12px; }
+  footer .meta { font-size: 0.8rem; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <div class="brand">Studio Presenza</div>
+    <a href="#pricing" class="btn-ghost" style="font-size:0.86rem;">Vedi il prezzo &rarr;</a>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <p class="eyebrow">Sito web AI-assistito -- consegna in 48 ore</p>
+      <h1 style="margin-top:14px;">Il sito web che il tuo business merita<br><span class="accent">Credibilità online, visibilità su Google</span></h1>
+      <p class="lede">Ottieni un sito web professionale e visibile su Google in 48h. Per piccole imprese e professionisti locali.</p>
+      <div class="cta-row">
+        <a href="https://buy.stripe.com/14A14n45o5Xa6fi1Ch5wI00" class="btn btn-primary">Scopri l'offerta &mdash; €149</a>
+        <a href="#come-funziona" class="btn-ghost">Come funziona</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="problema">
+    <div class="wrap">
+      <p class="eyebrow">Il problema</p>
+      <div class="problem-grid">
+        <div class="stat">~20%</div>
+        <div>
+          <p>Circa una piccola attivit&agrave; su cinque in Italia ed Europa opera ancora senza un sito web proprio -- non per mancanza di clienti, ma perch&eacute; sembra costoso o lento da ottenere. Nel frattempo perde credibilit&agrave; e visibilit&agrave; su Google rispetto a chi un sito ce l'ha.</p>
+          <p class="source">Stime 2026 convergenti tra <a href="https://www.networksolutions.com/blog/small-business-website-statistics/" target="_blank" rel="noopener">Network Solutions</a>, <a href="https://www.wix.com/blog/small-business-website-statistics" target="_blank" rel="noopener">Wix</a> e <a href="https://www.zippia.com/advice/small-business-website-statistics/" target="_blank" rel="noopener">Zippia</a>.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="cosa-include">
+    <div class="wrap">
+      <p class="eyebrow">Cosa include</p>
+      <h2 style="font-size:1.7rem; margin-top:10px;">Tutto il necessario per esistere online, niente di superfluo.</h2>
+      <ul class="included">
+        <li><span class="mark">01</span><div><strong>Sito web one-page</strong><span class="desc">Un sito web moderno, responsivo, online e raggiungibile subito.</span></div></li>
+        <li><span class="mark">02</span><div><strong>Kit di marca</strong><span class="desc">Logo, palette di colori e modelli social.</span></div></li>
+        <li><span class="mark">03</span><div><strong>Consegna rapida</strong><span class="desc">Sito e kit pronti e online, entro 48h dal pagamento.</span></div></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="come-funziona">
+    <div class="wrap">
+      <p class="eyebrow">Come funziona</p>
+      <div class="steps">
+        <div class="step"><p class="num">GIORNO 0</p><h3>Una breve chiamata o email</h3><p>10 minuti per capire chi sei, cosa fai, a chi ti rivolgi.</p></div>
+        <div class="step"><p class="num">GIORNO 1</p><h3>Costruiamo</h3><p>Testo, design e immagini vengono generati e rifiniti a mano.</p></div>
+        <div class="step"><p class="num">GIORNO 2</p><h3>Sei online</h3><p>Ricevi il link pubblico e i file del kit, pronti all'uso.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="pricing">
+    <div class="wrap">
+      <p class="eyebrow">Prezzo</p>
+      <h2 style="font-size:1.7rem; margin-top:10px;">Un prezzo, tutto incluso.</h2>
+      <div class="receipt">
+        <div class="row"><span>Sito web one-page</span><span>incluso</span></div>
+        <div class="row"><span>Kit di marca</span><span>incluso</span></div>
+        <div class="row"><span>Consegna rapida</span><span>incluso</span></div>
+        <div class="row total"><span>Totale</span><span class="amt">€149</span></div>
+        <p class="fine">Pagamento una tantum, nessun abbonamento. Pagamento sicuro tramite Stripe.</p>
+      </div>
+      <div class="cta-row">
+        <a href="https://buy.stripe.com/14A14n45o5Xa6fi1Ch5wI00" class="btn btn-primary">Acquista ora &mdash; €149</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="domande">
+    <div class="wrap">
+      <p class="eyebrow">Domande frequenti</p>
+      <dl class="faq">
+        <div><dt>L'AI scrive tutto da sola?</dt><dd>No: l'AI genera una prima bozza di testo, design e immagini, ma ogni sito viene rivisto e adattato a mano prima della consegna -- non &egrave; un modello riciclato.</dd></div>
+        <div><dt>Chi tiene il sito online dopo?</dt><dd>Il sito resta ospitato e raggiungibile; se vuoi un dominio tuo lo colleghiamo insieme, con un piccolo costo annuale pagato direttamente al registrar, non a noi.</dd></div>
+        <div><dt>E se non mi piace il risultato?</dt><dd>Prima della consegna finale vedi una bozza e puoi chiedere una revisione senza costi aggiuntivi.</dd></div>
+        <div><dt>Perch&eacute; cos&igrave; economico rispetto a un'agenzia?</dt><dd>Perch&eacute; la prima bozza &egrave; generata con l'AI in ore, non in settimane di lavoro manuale -- il risparmio di tempo si riflette sul prezzo, non sulla qualit&agrave; del risultato finale.</dd></div>
+      </dl>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="brand">Studio Presenza</div>
+    <div class="meta">Pagina generata da AICOS -- <a href="portfolio.html">vedi esempi reali</a></div>
+  </div>
+</footer>
+
+</body>
+</html>
