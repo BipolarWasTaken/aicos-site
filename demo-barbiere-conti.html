@@ -9,15 +9,15 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #1c1613; --panel: #241d19; --border: #3a2f28;
-    --text: #f3ece3; --text-dim: #c9bcae; --accent: #c9822e; --accent-soft: #e0a75c;
+    --bg: #1c1613; --panel: #241d19; --border: #3a2f28; --text: #f3ece3;
+    --text-dim: #c9bcae; --accent: #c9822e; --accent-ink: #241305; --accent-soft: #e0a75c;
   }
   * { box-sizing: border-box; }
   body {
     margin: 0; background: var(--bg); color: var(--text);
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; line-height: 1.6;
   }
-  h1, h2 { font-family: 'Fraunces', Georgia, serif; }
+  h1, h2 { font-family: 'Fraunces', Georgia, serif; text-transform: none; }
   .demo-banner {
     background: var(--panel); border-bottom: 1px solid var(--border);
     text-align: center; padding: 10px 16px; font-size: 13px; color: var(--text-dim);
@@ -27,7 +27,14 @@
     max-width: 760px; margin: 0 auto; padding: 28px 24px 0;
     display: flex; justify-content: space-between; align-items: center;
   }
-  header .brand { font-family: 'Fraunces', serif; font-weight: 600; font-size: 20px; }
+  .brand-group { display: flex; align-items: center; gap: 12px; }
+  .logo-mark {
+    width: 40px; height: 40px; border-radius: 50%; background: var(--accent); color: var(--accent-ink);
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    font-family: 'Fraunces', Georgia, serif; font-weight: 700; font-size: 15px;
+  }
+  .logo-mark.large { width: 56px; height: 56px; font-size: 21px; }
+  header .wordmark { font-family: 'Fraunces', Georgia, serif; font-weight: 600; font-size: 20px; }
   header nav a { color: var(--text-dim); text-decoration: none; margin-left: 22px; font-size: 14px; }
   section.hero {
     max-width: 760px; margin: 0 auto; padding: 64px 24px 48px; text-align: center;
@@ -36,7 +43,7 @@
   section.hero h1 { font-size: 46px; font-weight: 700; margin: 0 0 16px; }
   section.hero .tagline { font-size: 18px; color: var(--text-dim); max-width: 480px; margin: 0 auto 30px; }
   .cta-button {
-    display: inline-block; background: var(--accent); color: #241305; font-weight: 600;
+    display: inline-block; background: var(--accent); color: var(--accent-ink); font-weight: 600;
     text-decoration: none; padding: 14px 32px; border-radius: 999px; font-size: 15px;
     transition: background .15s;
   }
@@ -44,6 +51,7 @@
   main { max-width: 760px; margin: 0 auto; padding: 56px 24px; }
   main section { margin-bottom: 56px; }
   main h2 { font-size: 26px; margin: 0 0 18px; }
+  .section-intro { color: var(--text-dim); font-size: 15px; margin: -8px 0 26px; }
   .about p { color: var(--text-dim); font-size: 16px; max-width: 560px; }
   .services { list-style: none; padding: 0; margin: 0; border-top: 1px solid var(--border); }
   .services li {
@@ -53,13 +61,47 @@
   .services li .price { color: var(--accent-soft); font-weight: 600; }
   .hours-box {
     background: var(--panel); border: 1px solid var(--border); border-radius: 14px;
-    padding: 26px 28px; display: flex; justify-content: space-between; align-items: center;
-    flex-wrap: wrap; gap: 16px;
+    padding: 26px 28px;
   }
   .hours-box .label {
     font-size: 13px; text-transform: uppercase; letter-spacing: .06em; color: var(--text-dim);
     margin-bottom: 4px;
   }
+  .brandkit-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 18px; }
+  .brandkit-block { background: var(--panel); border: 1px solid var(--border); border-radius: 14px; padding: 22px; }
+  .bk-label {
+    font-size: 12px; text-transform: uppercase; letter-spacing: .07em; color: var(--text-dim); margin-bottom: 14px;
+  }
+  .logo-preview { display: flex; align-items: center; gap: 14px; }
+  .palette-row { display: flex; gap: 10px; flex-wrap: wrap; }
+  .swatch {
+    width: 60px; height: 60px; border-radius: 10px; border: 1px solid var(--border);
+    display: flex; align-items: flex-end; justify-content: center; padding-bottom: 6px;
+  }
+  .swatch span {
+    font-size: 9px; font-family: monospace; color: #fff; background: rgba(0,0,0,.4);
+    padding: 1px 5px; border-radius: 4px;
+  }
+  .type-sample { display: flex; flex-direction: column; gap: 14px; }
+  .type-row { display: flex; align-items: center; gap: 14px; }
+  .type-glyph { font-size: 28px; width: 42px; text-align: center; }
+  .type-glyph.display { font-family: 'Fraunces', Georgia, serif; font-weight: 700; }
+  .type-glyph.body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; font-weight: 600; }
+  .type-name { font-size: 13px; color: var(--text-dim); }
+  .social-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 16px; margin-top: 18px; }
+  .social-card {
+    aspect-ratio: 1; border-radius: 14px; padding: 18px; display: flex; flex-direction: column;
+    justify-content: space-between; font-family: 'Fraunces', Georgia, serif;
+  }
+  .social-card.fill { background: var(--accent); color: var(--accent-ink); }
+  .social-card.outline { background: var(--panel); color: var(--text); border: 1px solid var(--border); }
+  .social-card .social-mark {
+    width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center;
+    justify-content: center; font-weight: 700; font-size: 11px;
+  }
+  .social-card.fill .social-mark { background: rgba(0,0,0,.15); }
+  .social-card.outline .social-mark { background: var(--accent); color: var(--accent-ink); }
+  .social-card .social-text { font-size: 17px; font-weight: 600; line-height: 1.25; text-transform: none; }
   footer {
     max-width: 760px; margin: 0 auto; padding: 24px; color: var(--text-dim);
     font-size: 12.5px; border-top: 1px solid var(--border); text-align: center;
@@ -74,48 +116,86 @@
 </div>
 
 <header>
-  <div class="brand">Barbiere Conti</div>
-  <nav><a href="#servizi">Servizi</a><a href="#contatti">Contatti</a></nav>
+  <div class="brand-group">
+    <div class="logo-mark">BC</div>
+    <div class="wordmark">Barbiere Conti</div>
+  </div>
+  <nav><a href="#servizi">Servizi</a><a href="#brand-kit">Brand Kit</a></nav>
 </header>
 
 <section class="hero">
   <h1>Barbiere Conti</h1>
-  <p class="tagline">Barbiere Conti: la tua chioma in mani esperte</p>
-  <a class="cta-button" href="#contatti">Prenota ora</a>
+  <p class="tagline">Barbiere Conti: taglio alla moda a prezzi accessibili</p>
+  <a class="cta-button" href="https://bipolarwastaken.github.io/aicos-site/ai-starter-website-brand-kit.html">Vuoi un sito cosi' per la tua attivita'?</a>
 </section>
 
 <main>
   <section class="about">
     <h2>Chi siamo</h2>
-    <p>Benvenuti a Barbiere Conti, dove il comfort e il professionismo si uniscono per offrire un servizio di taglio capelli di alto livello. Ci prendiamo cura del tuo look con cura e attenzione.</p>
+    <p>Benvenuti da Barbiere Conti, dove il nostro obiettivo è fare di ogni visita un'esperienza piacevole e professionale. Offriamo tagli di alta qualità e servizio clienti di primo livello.</p>
   </section>
 
   <section id="servizi">
     <h2>Servizi</h2>
     <ul class="services">
-      <li><span>Taglio capelli maschile</span><span class="price">EUR 20</span></li>
-      <li><span>Taglio capelli femminile</span><span class="price">EUR 25</span></li>
+      <li><span>Taglio standard</span><span class="price">EUR 20</span></li>
+      <li><span>Taglio specializzato</span><span class="price">EUR 30</span></li>
       <li><span>Barba e baffi</span><span class="price">EUR 15</span></li>
-      <li><span>Tintura</span><span class="price">EUR 60</span></li>
-      <li><span>Perm</span><span class="price">EUR 50</span></li>
+      <li><span>Styling</span><span class="price">EUR 10</span></li>
     </ul>
+    <div class="hours-box" style="margin-top:18px;">
+      <div class="label">Orari</div>
+      <div>Lun-Ven 9:00-18:00, Sab 9:00-15:00</div>
+    </div>
   </section>
 
-  <section id="contatti">
-    <h2>Orari e contatti</h2>
-    <div class="hours-box">
-      <div>
-        <div class="label">Orari</div>
-        <div>Lun-Sab 9:00-19:00</div>
+  <section id="brand-kit">
+    <h2>Il brand kit</h2>
+    <p class="section-intro">Logo, palette e template social pronti da usare su ogni canale -- inclusi nell'offerta.</p>
+    <div class="brandkit-grid">
+      <div class="brandkit-block">
+        <div class="bk-label">Logo</div>
+        <div class="logo-preview">
+          <div class="logo-mark large">BC</div>
+          <div class="wordmark">Barbiere Conti</div>
+        </div>
       </div>
-      <a class="cta-button" href="#">Prenota ora</a>
+      <div class="brandkit-block">
+        <div class="bk-label">Palette colori</div>
+        <div class="palette-row">
+          <div class="swatch" style="background:var(--bg)"><span>#1c1613</span></div>
+          <div class="swatch" style="background:var(--accent)"><span>#c9822e</span></div>
+          <div class="swatch" style="background:var(--panel)"><span>#241d19</span></div>
+        </div>
+      </div>
+      <div class="brandkit-block">
+        <div class="bk-label">Tipografia</div>
+        <div class="type-sample">
+          <div class="type-row"><span class="type-glyph display">Aa</span><span class="type-name">Titoli</span></div>
+          <div class="type-row"><span class="type-glyph body">Aa</span><span class="type-name">Testo</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="social-grid">
+      <div class="social-card fill">
+        <div class="social-mark">BC</div>
+        <div class="social-text">Taglio di capelli professionale</div>
+      </div>
+      <div class="social-card outline">
+        <div class="social-text">Servizio clienti eccellente</div>
+        <div class="social-mark">BC</div>
+      </div>
+      <div class="social-card fill">
+        <div class="social-mark">BC</div>
+        <div class="social-text">Barbiere Conti</div>
+      </div>
     </div>
   </section>
 </main>
 
 <footer>
   Esempio dimostrativo generato da AICOS per mostrare la qualita' reale del servizio "AI Starter Website + Brand Kit".
-  <br><a href="portfolio.html">&larr; Torna al portfolio</a>
+  <br><a href="https://bipolarwastaken.github.io/aicos-site/ai-starter-website-brand-kit.html">Vuoi un sito cosi'? Richiedilo ora</a> &middot; <a href="portfolio.html">Torna al portfolio</a>
 </footer>
 
 </body>
