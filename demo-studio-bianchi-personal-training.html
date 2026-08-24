@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Studio Bianchi Personal Training -- Sito dimostrativo AICOS</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0d1321; --panel: #141d2f; --border: #24304a; --text: #eef1f7;
+    --text-dim: #9aa7bf; --accent: #ff6b4a; --accent-ink: #2b0906; --accent-soft: #ff8a68;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--text);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; line-height: 1.6;
+  }
+  h1, h2 { font-family: 'Bebas Neue', Impact, sans-serif; text-transform: uppercase; }
+  .demo-banner {
+    background: var(--panel); border-bottom: 1px solid var(--border);
+    text-align: center; padding: 10px 16px; font-size: 13px; color: var(--text-dim);
+  }
+  .demo-banner a { color: var(--accent-soft); }
+  header {
+    max-width: 760px; margin: 0 auto; padding: 28px 24px 0;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .brand-group { display: flex; align-items: center; gap: 12px; }
+  .logo-mark {
+    width: 40px; height: 40px; border-radius: 50%; background: var(--accent); color: var(--accent-ink);
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    font-family: 'Bebas Neue', Impact, sans-serif; font-weight: 700; font-size: 15px;
+  }
+  .logo-mark.large { width: 56px; height: 56px; font-size: 21px; }
+  header .wordmark { font-family: 'Bebas Neue', Impact, sans-serif; font-weight: 600; font-size: 20px; }
+  header nav a { color: var(--text-dim); text-decoration: none; margin-left: 22px; font-size: 14px; }
+  section.hero {
+    max-width: 760px; margin: 0 auto; padding: 64px 24px 48px; text-align: center;
+    border-bottom: 1px solid var(--border);
+  }
+  section.hero h1 { font-size: 46px; font-weight: 700; margin: 0 0 16px; }
+  section.hero .tagline { font-size: 18px; color: var(--text-dim); max-width: 480px; margin: 0 auto 30px; }
+  .cta-button {
+    display: inline-block; background: var(--accent); color: var(--accent-ink); font-weight: 600;
+    text-decoration: none; padding: 14px 32px; border-radius: 999px; font-size: 15px;
+    transition: background .15s;
+  }
+  .cta-button:hover { background: var(--accent-soft); }
+  main { max-width: 760px; margin: 0 auto; padding: 56px 24px; }
+  main section { margin-bottom: 56px; }
+  main h2 { font-size: 26px; margin: 0 0 18px; }
+  .section-intro { color: var(--text-dim); font-size: 15px; margin: -8px 0 26px; }
+  .about p { color: var(--text-dim); font-size: 16px; max-width: 560px; }
+  .services { list-style: none; padding: 0; margin: 0; border-top: 1px solid var(--border); }
+  .services li {
+    display: flex; justify-content: space-between; padding: 14px 0;
+    border-bottom: 1px solid var(--border); font-size: 15.5px;
+  }
+  .services li .price { color: var(--accent-soft); font-weight: 600; }
+  .hours-box {
+    background: var(--panel); border: 1px solid var(--border); border-radius: 14px;
+    padding: 26px 28px;
+  }
+  .hours-box .label {
+    font-size: 13px; text-transform: uppercase; letter-spacing: .06em; color: var(--text-dim);
+    margin-bottom: 4px;
+  }
+  .brandkit-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 18px; }
+  .brandkit-block { background: var(--panel); border: 1px solid var(--border); border-radius: 14px; padding: 22px; }
+  .bk-label {
+    font-size: 12px; text-transform: uppercase; letter-spacing: .07em; color: var(--text-dim); margin-bottom: 14px;
+  }
+  .logo-preview { display: flex; align-items: center; gap: 14px; }
+  .palette-row { display: flex; gap: 10px; flex-wrap: wrap; }
+  .swatch {
+    width: 60px; height: 60px; border-radius: 10px; border: 1px solid var(--border);
+    display: flex; align-items: flex-end; justify-content: center; padding-bottom: 6px;
+  }
+  .swatch span {
+    font-size: 9px; font-family: monospace; color: #fff; background: rgba(0,0,0,.4);
+    padding: 1px 5px; border-radius: 4px;
+  }
+  .type-sample { display: flex; flex-direction: column; gap: 14px; }
+  .type-row { display: flex; align-items: center; gap: 14px; }
+  .type-glyph { font-size: 28px; width: 42px; text-align: center; }
+  .type-glyph.display { font-family: 'Bebas Neue', Impact, sans-serif; font-weight: 700; }
+  .type-glyph.body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; font-weight: 600; }
+  .type-name { font-size: 13px; color: var(--text-dim); }
+  .social-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 16px; margin-top: 18px; }
+  .social-card {
+    aspect-ratio: 1; border-radius: 14px; padding: 18px; display: flex; flex-direction: column;
+    justify-content: space-between; font-family: 'Bebas Neue', Impact, sans-serif;
+  }
+  .social-card.fill { background: var(--accent); color: var(--accent-ink); }
+  .social-card.outline { background: var(--panel); color: var(--text); border: 1px solid var(--border); }
+  .social-card .social-mark {
+    width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center;
+    justify-content: center; font-weight: 700; font-size: 11px;
+  }
+  .social-card.fill .social-mark { background: rgba(0,0,0,.15); }
+  .social-card.outline .social-mark { background: var(--accent); color: var(--accent-ink); }
+  .social-card .social-text { font-size: 17px; font-weight: 600; line-height: 1.25; text-transform: uppercase; }
+  footer {
+    max-width: 760px; margin: 0 auto; padding: 24px; color: var(--text-dim);
+    font-size: 12.5px; border-top: 1px solid var(--border); text-align: center;
+  }
+  footer a { color: var(--accent-soft); }
+</style>
+</head>
+<body>
+
+<div class="demo-banner">
+  Sito dimostrativo creato con AICOS -- non e' un'attivita' reale. <a href="portfolio.html">Vedi altri esempi</a>
+</div>
+
+<header>
+  <div class="brand-group">
+    <div class="logo-mark">SB</div>
+    <div class="wordmark">Studio Bianchi Personal Training</div>
+  </div>
+  <nav><a href="#servizi">Servizi</a><a href="#brand-kit">Brand Kit</a></nav>
+</header>
+
+<section class="hero">
+  <h1>Studio Bianchi Personal Training</h1>
+  <p class="tagline">Formazione personale, risultati duraturi</p>
+  <a class="cta-button" href="https://bipolarwastaken.github.io/aicos-site/ai-starter-website-brand-kit.html">Vuoi un sito cosi' per la tua attivita'?</a>
+</section>
+
+<main>
+  <section class="about">
+    <h2>Chi siamo</h2>
+    <p>Studio Bianchi offre servizi di personal training su misura per raggiungere obiettivi fitness specifici. I nostri allenamenti sono pensati per essere efficaci, divertenti e personalizzati.</p>
+  </section>
+
+  <section id="servizi">
+    <h2>Servizi</h2>
+    <ul class="services">
+      <li><span>Sessione di allenamento</span><span class="price">EUR 50</span></li>
+      <li><span>Piano settimanale</span><span class="price">EUR 75</span></li>
+      <li><span>Nutrizione personalizzata</span><span class="price">EUR 100</span></li>
+    </ul>
+    <div class="hours-box" style="margin-top:18px;">
+      <div class="label">Orari</div>
+      <div>Lun-Sab 9:00-19:00</div>
+    </div>
+  </section>
+
+  <section id="brand-kit">
+    <h2>Il brand kit</h2>
+    <p class="section-intro">Logo, palette e template social pronti da usare su ogni canale -- inclusi nell'offerta.</p>
+    <div class="brandkit-grid">
+      <div class="brandkit-block">
+        <div class="bk-label">Logo</div>
+        <div class="logo-preview">
+          <div class="logo-mark large">SB</div>
+          <div class="wordmark">Studio Bianchi Personal Training</div>
+        </div>
+      </div>
+      <div class="brandkit-block">
+        <div class="bk-label">Palette colori</div>
+        <div class="palette-row">
+          <div class="swatch" style="background:var(--bg)"><span>#0d1321</span></div>
+          <div class="swatch" style="background:var(--accent)"><span>#ff6b4a</span></div>
+          <div class="swatch" style="background:var(--panel)"><span>#141d2f</span></div>
+        </div>
+      </div>
+      <div class="brandkit-block">
+        <div class="bk-label">Tipografia</div>
+        <div class="type-sample">
+          <div class="type-row"><span class="type-glyph display">Aa</span><span class="type-name">Titoli</span></div>
+          <div class="type-row"><span class="type-glyph body">Aa</span><span class="type-name">Testo</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="social-grid">
+      <div class="social-card fill">
+        <div class="social-mark">SB</div>
+        <div class="social-text">Allenamento su misura per te</div>
+      </div>
+      <div class="social-card outline">
+        <div class="social-text">Formazione fisica e mentale</div>
+        <div class="social-mark">SB</div>
+      </div>
+      <div class="social-card fill">
+        <div class="social-mark">SB</div>
+        <div class="social-text">Studio Bianchi Personal Training</div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  Esempio dimostrativo generato da AICOS per mostrare la qualita' reale del servizio "AI Starter Website + Brand Kit".
+  <br><a href="https://bipolarwastaken.github.io/aicos-site/ai-starter-website-brand-kit.html">Vuoi un sito cosi'? Richiedilo ora</a> &middot; <a href="portfolio.html">Torna al portfolio</a>
+</footer>
+
+</body>
+</html>
