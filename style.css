@@ -97,3 +97,109 @@ footer a { color: var(--text-dim); }
 
 ul { color: var(--text-dim); font-size: 14.5px; }
 li { margin-bottom: 6px; }
+
+/* Landing pages (single-project sales pitches, distinct from blog articles) */
+
+main > section { margin-bottom: 48px; }
+main > section:last-child { margin-bottom: 0; }
+
+section.hero {
+  text-align: center;
+  padding-bottom: 40px;
+  border-bottom: 1px solid var(--border);
+}
+
+section.hero h1 {
+  font-size: 38px;
+  max-width: 640px;
+  margin: 0 auto 14px;
+}
+
+section.hero .tagline {
+  font-size: 18px;
+  max-width: 480px;
+  margin: 0 auto 30px;
+}
+
+main > section:not(.hero) > h2 {
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 24px;
+}
+
+.cta-button {
+  display: inline-block;
+  background: var(--accent);
+  color: #06231f;
+  font-weight: 700;
+  font-size: 15.5px;
+  text-decoration: none;
+  padding: 14px 32px;
+  border-radius: 10px;
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+
+.cta-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 24px rgba(79, 209, 197, 0.22);
+}
+
+section ul, section ol {
+  max-width: 440px;
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+}
+
+section ul li, section ol li {
+  padding: 12px 0 12px 36px;
+  position: relative;
+  border-bottom: 1px solid var(--border);
+  text-align: left;
+}
+
+section ul li:last-child, section ol li:last-child { border-bottom: none; }
+
+section ul li::before {
+  content: "\2713";
+  color: var(--accent);
+  font-weight: 700;
+  position: absolute;
+  left: 4px;
+}
+
+section ol { counter-reset: step; }
+
+section ol li::before {
+  counter-increment: step;
+  content: counter(step);
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 12px;
+  position: absolute;
+  left: 0;
+  top: 11px;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  text-align: center;
+  border: 1px solid var(--accent);
+  border-radius: 50%;
+}
+
+.price-box {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 40px 24px;
+  text-align: center;
+  max-width: 380px;
+  margin: 0 auto;
+}
+
+.price-box .price {
+  font-size: 42px;
+  font-weight: 800;
+  color: var(--text);
+  margin: 0 0 22px;
+}
