@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Estetica Raffaella -- Sito dimostrativo AICOS</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #14121f; --panel: #1c1930; --border: #322c4c; --text: #ece9f7;
+    --text-dim: #a79fc4; --accent: #8b7fd6; --accent-ink: #100c1f; --accent-soft: #ab9fe8;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--text);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; line-height: 1.6;
+  }
+  h1, h2 { font-family: 'Sora', -apple-system, sans-serif; text-transform: none; }
+  .demo-banner {
+    background: var(--panel); border-bottom: 1px solid var(--border);
+    text-align: center; padding: 10px 16px; font-size: 13px; color: var(--text-dim);
+  }
+  .demo-banner a { color: var(--accent-soft); }
+  header {
+    max-width: 760px; margin: 0 auto; padding: 28px 24px 0;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .brand-group { display: flex; align-items: center; gap: 12px; }
+  .logo-mark {
+    width: 40px; height: 40px; border-radius: 50%; background: var(--accent); color: var(--accent-ink);
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    font-family: 'Sora', -apple-system, sans-serif; font-weight: 700; font-size: 15px;
+  }
+  .logo-mark.large { width: 56px; height: 56px; font-size: 21px; }
+  header .wordmark { font-family: 'Sora', -apple-system, sans-serif; font-weight: 600; font-size: 20px; }
+  header nav a { color: var(--text-dim); text-decoration: none; margin-left: 22px; font-size: 14px; }
+  .eyebrow {
+    font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11px; letter-spacing: .12em;
+    text-transform: uppercase; color: var(--accent); font-weight: 500;
+  }
+  section.hero {
+    max-width: 900px; margin: 0 auto; padding: 64px 24px 56px; border-bottom: 1px solid var(--border);
+  }
+  .hero-grid { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 48px; align-items: center; }
+  .hero-grid h1 { font-size: clamp(2.1rem, 4.5vw, 3rem); text-align: left; margin: 12px 0 14px; line-height: 1.1; }
+  .hero-grid .tagline { font-size: 17px; color: var(--text-dim); text-align: left; margin: 0 0 28px; max-width: 46ch; }
+  @media (max-width: 680px) { .hero-grid { grid-template-columns: 1fr; } }
+  .info-card {
+    background: var(--panel); border: 1px solid var(--border); border-radius: 14px;
+    padding: 24px; position: relative; overflow: hidden;
+  }
+  .info-card::before { content: ""; position: absolute; inset: 0 0 auto 0; height: 5px; background: var(--accent); }
+  .info-card .ic-label {
+    font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; letter-spacing: .08em;
+    text-transform: uppercase; color: var(--text-dim); margin-top: 14px;
+  }
+  .info-card .ic-name { font-family: 'Sora', -apple-system, sans-serif; font-size: 20px; font-weight: 600; margin-top: 6px; }
+  .info-card .ic-status { display: flex; align-items: center; gap: 8px; margin-top: 14px; font-size: 13px; color: var(--text-dim); }
+  .info-card hr { border: none; border-top: 1px solid var(--border); margin: 18px 0; }
+  .info-card .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); flex-shrink: 0; }
+  .cta-button {
+    display: inline-block; background: var(--accent); color: var(--accent-ink); font-weight: 600;
+    text-decoration: none; padding: 14px 32px; border-radius: 999px; font-size: 15px;
+    transition: background .15s;
+  }
+  .cta-button:hover { background: var(--accent-soft); }
+  main { max-width: 760px; margin: 0 auto; padding: 56px 24px; }
+  main section { margin-bottom: 56px; }
+  main h2 { font-size: 26px; margin: 10px 0 18px; }
+  .section-intro { color: var(--text-dim); font-size: 15px; margin: -8px 0 26px; }
+  .about p { color: var(--text-dim); font-size: 16px; max-width: 560px; }
+  .services { list-style: none; padding: 0; margin: 0; border-top: 1px solid var(--border); }
+  .services li {
+    display: flex; justify-content: space-between; padding: 14px 0;
+    border-bottom: 1px solid var(--border); font-size: 15.5px;
+  }
+  .services li .price { color: var(--accent-soft); font-weight: 600; }
+  .hours-box {
+    background: var(--panel); border: 1px solid var(--border); border-radius: 14px;
+    padding: 26px 28px;
+  }
+  .hours-box .label {
+    font-size: 13px; text-transform: uppercase; letter-spacing: .06em; color: var(--text-dim);
+    margin-bottom: 4px;
+  }
+  .brandkit-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 18px; }
+  .brandkit-block { background: var(--panel); border: 1px solid var(--border); border-radius: 14px; padding: 22px; }
+  .bk-label {
+    font-size: 12px; text-transform: uppercase; letter-spacing: .07em; color: var(--text-dim); margin-bottom: 14px;
+  }
+  .logo-preview { display: flex; align-items: center; gap: 14px; }
+  .palette-row { display: flex; gap: 10px; flex-wrap: wrap; }
+  .swatch {
+    width: 60px; height: 60px; border-radius: 10px; border: 1px solid var(--border);
+    display: flex; align-items: flex-end; justify-content: center; padding-bottom: 6px;
+  }
+  .swatch span {
+    font-size: 9px; font-family: monospace; color: #fff; background: rgba(0,0,0,.4);
+    padding: 1px 5px; border-radius: 4px;
+  }
+  .type-sample { display: flex; flex-direction: column; gap: 14px; }
+  .type-row { display: flex; align-items: center; gap: 14px; }
+  .type-glyph { font-size: 28px; width: 42px; text-align: center; }
+  .type-glyph.display { font-family: 'Sora', -apple-system, sans-serif; font-weight: 700; }
+  .type-glyph.body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; font-weight: 600; }
+  .type-name { font-size: 13px; color: var(--text-dim); }
+  .social-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 16px; margin-top: 18px; }
+  .social-card {
+    aspect-ratio: 1; border-radius: 14px; padding: 18px; display: flex; flex-direction: column;
+    justify-content: space-between; font-family: 'Sora', -apple-system, sans-serif;
+  }
+  .social-card.fill { background: var(--accent); color: var(--accent-ink); }
+  .social-card.outline { background: var(--panel); color: var(--text); border: 1px solid var(--border); }
+  .social-card .social-mark {
+    width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center;
+    justify-content: center; font-weight: 700; font-size: 11px;
+  }
+  .social-card.fill .social-mark { background: rgba(0,0,0,.15); }
+  .social-card.outline .social-mark { background: var(--accent); color: var(--accent-ink); }
+  .social-card .social-text { font-size: 17px; font-weight: 600; line-height: 1.25; text-transform: none; }
+  footer {
+    max-width: 760px; margin: 0 auto; padding: 24px; color: var(--text-dim);
+    font-size: 12.5px; border-top: 1px solid var(--border); text-align: center;
+  }
+  footer a { color: var(--accent-soft); }
+</style>
+</head>
+<body>
+
+<div class="demo-banner">
+  Sito dimostrativo creato con AICOS -- non e' un'attivita' reale. <a href="portfolio.html">Vedi altri esempi</a>
+</div>
+
+<header>
+  <div class="brand-group">
+    <div class="logo-mark">ER</div>
+    <div class="wordmark">Estetica Raffaella</div>
+  </div>
+  <nav><a href="#servizi">Servizi</a><a href="#brand-kit">Brand Kit</a></nav>
+</header>
+
+<section class="hero">
+  <div class="hero-grid">
+    <div>
+      <p class="eyebrow">beauty &middot; realizzato con AICOS</p>
+      <h1>Estetica Raffaella</h1>
+      <p class="tagline">Estetica Raffaella, cura del tuo benessere</p>
+      <a class="cta-button" href="https://bipolarwastaken.github.io/aicos-site/studio-presenza.html">Vuoi un sito cosi' per la tua attivita'?</a>
+    </div>
+    <div class="info-card">
+      <p class="ic-label">Attivita'</p>
+      <p class="ic-name">Estetica Raffaella</p>
+      <div class="ic-status"><span class="dot"></span> beauty</div>
+      <hr>
+      <p class="ic-label">Realizzato con</p>
+      <p class="ic-name" style="color:var(--accent);">AICOS -- AI Starter Website</p>
+      <div class="ic-status"><span class="dot"></span> Online in 48 ore</div>
+    </div>
+  </div>
+</section>
+
+<main>
+  <section class="about">
+    <h2>Chi siamo</h2>
+    <p>Benvenuti a Estetica Raffaella, dove il benessere e la bellezza si uniscono. Visita il nostro centro estetico nel cuore di Vescovato per trattamenti di alta qualità.</p>
+  </section>
+
+
+  <section id="brand-kit">
+    <p class="eyebrow">Brand kit</p>
+    <h2>Logo, palette e social</h2>
+    <p class="section-intro">Logo, palette e template social pronti da usare su ogni canale -- inclusi nell'offerta.</p>
+    <div class="brandkit-grid">
+      <div class="brandkit-block">
+        <div class="bk-label">Logo</div>
+        <div class="logo-preview">
+          <div class="logo-mark large">ER</div>
+          <div class="wordmark">Estetica Raffaella</div>
+        </div>
+      </div>
+      <div class="brandkit-block">
+        <div class="bk-label">Palette colori</div>
+        <div class="palette-row">
+          <div class="swatch" style="background:var(--bg)"><span>#14121f</span></div>
+          <div class="swatch" style="background:var(--accent)"><span>#8b7fd6</span></div>
+          <div class="swatch" style="background:var(--panel)"><span>#1c1930</span></div>
+        </div>
+      </div>
+      <div class="brandkit-block">
+        <div class="bk-label">Tipografia</div>
+        <div class="type-sample">
+          <div class="type-row"><span class="type-glyph display">Aa</span><span class="type-name">Titoli</span></div>
+          <div class="type-row"><span class="type-glyph body">Aa</span><span class="type-name">Testo</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="social-grid">
+      <div class="social-card fill">
+        <div class="social-mark">ER</div>
+        <div class="social-text">Benessere a Vescovato</div>
+      </div>
+      <div class="social-card outline">
+        <div class="social-text">Sii parte della nostra community</div>
+        <div class="social-mark">ER</div>
+      </div>
+      <div class="social-card fill">
+        <div class="social-mark">ER</div>
+        <div class="social-text">Estetica Raffaella</div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  Esempio dimostrativo generato da AICOS per mostrare la qualita' reale del servizio "AI Starter Website + Brand Kit".
+  <br><a href="https://bipolarwastaken.github.io/aicos-site/studio-presenza.html">Vuoi un sito cosi'? Richiedilo ora</a> &middot; <a href="portfolio.html">Torna al portfolio</a>
+</footer>
+
+</body>
+</html>
